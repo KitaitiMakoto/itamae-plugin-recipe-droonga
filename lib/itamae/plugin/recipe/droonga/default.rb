@@ -4,7 +4,7 @@ execute "daemon-reload" do
 end
 
 execute "curl https://raw.githubusercontent.com/droonga/droonga-engine/master/install.sh | bash" do
-  not_if "which droonga-engine"
+  not_if "type droonga-engine"
 end
 
 file "/etc/init.d/droonga-engine" do
@@ -12,7 +12,7 @@ file "/etc/init.d/droonga-engine" do
 end
 
 execute "curl https://raw.githubusercontent.com/droonga/droonga-http-server/master/install.sh | bash" do
-  not_if "which droonga-http-server"
+  not_if "type droonga-http-server"
 end
 
 file "/etc/init.d/droonga-http-server" do
