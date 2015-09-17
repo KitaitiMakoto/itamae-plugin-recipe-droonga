@@ -1,0 +1,13 @@
+[Unit]
+Description=Droonga HTTP Server
+
+[Service]
+User=droonga-http-server
+ExecStart=/usr/local/bin/droonga-http-server
+ExecStop=/bin/kill -TERM $MAINPID
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+WorkingDirectory=/home/droonga-http-server/droonga
+
+[Install]
+WantedBy=multi-user.target

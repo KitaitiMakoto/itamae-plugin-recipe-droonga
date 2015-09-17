@@ -5,10 +5,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'itamae/plugin/recipe/droonga/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "itamae-plugin-recipe-droonga"
+  gem.name          = "itamae-plugin-recipe-km_droonga"
   gem.version       = Itamae::Plugin::Recipe::Droonga::VERSION
-  gem.summary       = %q{TODO: Summary}
-  gem.description   = %q{TODO: Description}
+  gem.summary       = %q{Itamae recipe plugin for Droonga}
+  gem.description   = %q{Itamae recipe plugin to install Droonga including Droonga Engine and Droonga HTTP Server}
   gem.license       = "LGPL"
   gem.authors       = ["KITAITI Makoto"]
   gem.email         = "KitaitiMakoto@gmail.com"
@@ -28,6 +28,8 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
+
+  gem.add_dependency 'itamae'
 
   gem.add_development_dependency 'bundler', '~> 1.10'
   gem.add_development_dependency 'rake', '~> 10.0'

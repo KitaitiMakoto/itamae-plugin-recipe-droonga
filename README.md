@@ -1,24 +1,26 @@
 # itamae-plugin-recipe-droonga
 
 * [Homepage](https://rubygems.org/gems/itamae-plugin-recipe-droonga)
-* [Documentation](http://rubydoc.info/gems/itamae-plugin-recipe-droonga/frames)
+* [Documentation](http://rubydoc.info/gems/itamae-plugin-recipe-droonga)
 * [Email](mailto:KitaitiMakoto at gmail.com)
 
 ## Description
 
-TODO: Description
+Itamae recipe plugin to install Droonga including Droonga Engine and Droonga HTTP Server
 
 ## Features
 
+* Ubuntu 15.04 support
+
 ## Examples
 
-    require 'itamae/plugin/recipe/droonga'
+    include_recipe "droonga"
 
 ## Requirements
 
 ## Install
 
-    $ gem install itamae-plugin-recipe-droonga
+    $ gem install itamae-plugin-recipe-km_droonga
 
 ## Copyright
 
