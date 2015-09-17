@@ -2,12 +2,6 @@
 
 require 'rubygems'
 
-begin
-  require 'bundler/setup'
-rescue LoadError => e
-  abort e.message
-end
-
 require 'rake'
 
 
