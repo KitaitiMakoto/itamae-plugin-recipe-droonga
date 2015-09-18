@@ -3,6 +3,28 @@ execute "daemon-reload" do
   action :nothing
 end
 
+%w[
+  build-essential
+  libssl-dev
+  zlib1g-dev
+  libreadline6-dev
+].each do |pkg|
+  package pkg
+end
+
+execute "install ruby" do
+  command "cd /usr/local/src && " +
+          "curl https://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.3.tar.gz | " +
+          "tar xzf - && " +
+          "cd ruby-2.2.3 && " +
+          "./configure && " +
+          "make && " +
+          "make install && " +
+          "gem update --system && " +
+          "gem update"
+  not_if "type ruby"
+end
+
 execute "curl https://raw.githubusercontent.com/droonga/droonga-engine/master/install.sh | bash" do
   not_if "type droonga-engine"
 end
