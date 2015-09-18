@@ -25,6 +25,14 @@ execute "install ruby" do
   not_if "type ruby"
 end
 
+execute "curl -sL https://deb.nodesource.com/setup_0.12 | bash" do
+  not_if "test -e /etc/apt/sources.list.d/nodesource.list"
+end
+
+execute "sudo apt-get install -y nodejs" do
+  not_if "type node"
+end
+
 execute "curl https://raw.githubusercontent.com/droonga/droonga-engine/master/install.sh | bash" do
   not_if "type droonga-engine"
 end
