@@ -3,7 +3,7 @@ Description=Droonga HTTP Server
 
 [Service]
 User=droonga-http-server
-ExecStart=/usr/bin/droonga-http-server
+ExecStart=/usr/bin/droonga-http-server --cache-size=-1
 ExecStop=/bin/kill -TERM $MAINPID
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
