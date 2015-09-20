@@ -1,0 +1,11 @@
+/home/droonga-engine/droonga/droonga-engine.log {
+    daily
+    missingok
+    rotate 30
+    compress
+    delaycompress
+    create 644 droonga-engine droonga
+    postrotate
+        systemctl reload droonga-engine.service
+    endscript
+}

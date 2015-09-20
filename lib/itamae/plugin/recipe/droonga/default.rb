@@ -63,6 +63,18 @@ template "/lib/systemd/system/droonga-http-server.service" do
   notifies :run, "execute[daemon-reload]"
 end
 
+template "/etc/logrotate.d/droonga-engine" do
+  owner "root"
+  group "root"
+  mode  "644"
+end
+
+template "/etc/logrotate.d/droonga-http-server" do
+  owner "root"
+  group "root"
+  mode  "644"
+end
+
 service "droonga-engine" do
   action [:enable, :start]
 end
