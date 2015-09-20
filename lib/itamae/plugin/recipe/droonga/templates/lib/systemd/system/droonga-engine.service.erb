@@ -5,7 +5,7 @@ Description=Droonga Engine
 User=droonga-engine
 ExecStart=/usr/local/bin/droonga-engine
 ExecStop=/bin/kill -TERM $MAINPID
-ExecReload=/bin/kill -HUP $MAINPID
+ExecReload=/bin/kill -USR1 $MAINPID
 Restart=on-failure
 WorkingDirectory=/home/droonga-engine/droonga
 
